@@ -22,6 +22,10 @@
 
 <div class="app-body">
 
+  <div class="eyebrow">PERSONAL ACTIVITY LOG</div>
+  <h2 style="font-size:26px;" id="overview-title">行動管理ダッシュボード</h2>
+  <p class="note" id="overview-range" style="color:var(--text-muted);font-size:13px;margin-top:6px;"></p>
+
   <div class="section-title">
     <h2>行動を記録する</h2>
     <span class="note" id="today-label"></span>
@@ -44,6 +48,46 @@
     まだ行動が登録されていません。上のフォームから最初の一つを追加しましょう。
   </div>
 
+  <!-- 概要スタットカード -->
+  <div class="section-title">
+    <h2>概要</h2>
+    <span class="note" id="stat-window-note">直近31日間</span>
+  </div>
+  <div class="stat-grid" id="stat-grid"></div>
+
+  <!-- カテゴリ別内訳 -->
+  <div class="section-title">
+    <h2>行動別の内訳</h2>
+    <span class="note" id="breakdown-note"></span>
+  </div>
+  <div class="card breakdown-card" id="breakdown-card"></div>
+
+  <!-- 曜日別パターン -->
+  <div class="section-title">
+    <h2>曜日別パターン</h2>
+    <span class="note">どの曜日に記録が集中しているか</span>
+  </div>
+  <div class="card weekday-card" id="weekday-card"></div>
+
+  <!-- ヒートマップ -->
+  <div class="section-title">
+    <h2>アクティビティヒートマップ</h2>
+    <span class="note">日ごとの記録数（セルにカーソルを合わせると内訳を表示）</span>
+  </div>
+  <div class="card heatmap-card" id="heatmap-card"></div>
+
+  <!-- タイムライン -->
+  <div class="section-title">
+    <h2>タイムライン</h2>
+    <span class="note">行動をクリックすると絞り込めます</span>
+  </div>
+  <div class="card timeline-card">
+    <div class="chip-row" id="timeline-chips"></div>
+    <div id="timeline-list"></div>
+    <div id="timeline-empty" class="empty-state" style="display:none;">記録がまだありません。</div>
+  </div>
+
+  <!-- お気に入り -->
   <div class="section-title">
     <h2>お気に入りの記録</h2>
     <span class="note">達成した瞬間を保存しておけます</span>
@@ -85,14 +129,14 @@
     </div>
     <button class="btn secondary block" id="btn-save-password" style="margin-bottom:22px;">パスワードを変更</button>
 
-    <hr style="border:none;border-top:1px solid var(--paper-line);margin:18px 0;">
+    <hr style="border:none;border-top:1px solid var(--border);margin:18px 0;">
     <div class="field">
       <label>Googleカレンダー連携</label>
       <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" id="mp-gcal-status">未連携</div>
       <button class="btn secondary block" id="btn-gcal-disconnect">連携を解除</button>
     </div>
 
-    <hr style="border:none;border-top:1px solid var(--paper-line);margin:18px 0;">
+    <hr style="border:none;border-top:1px solid var(--border);margin:18px 0;">
     <button class="btn link" id="btn-delete-account" style="color:var(--shu);">退会（アカウント削除）</button>
 
     <div class="modal-actions">
