@@ -10,7 +10,7 @@
  *   下の CALENDAR_CLIENT_ID に設定。承認済みJavaScript生成元にGitHub PagesのURLを追加。
  ************************************************************/
 
-const CALENDAR_CLIENT_ID = '【ここにGoogle CloudのOAuthクライアントIDを貼り付け】';
+const CALENDAR_CLIENT_ID = '256690964271-4tfdv5g89nj9c94lv7a48105nup0392v.apps.googleusercontent.com';
 const CALENDAR_SCOPE = 'https://www.googleapis.com/auth/calendar.readonly';
 
 let gcalTokenClient = null;
