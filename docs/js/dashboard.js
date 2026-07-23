@@ -309,5 +309,7 @@ document.getElementById('btn-logout').addEventListener('click', async function (
 });
 
 /* ---------- 起動 ---------- */
-loadDashboard();
+loadDashboard().then(function () {
+  if (typeof gcalTokenValid === 'function' && gcalTokenValid()) syncTodayFromCalendar();
+});
 loadFavorites();

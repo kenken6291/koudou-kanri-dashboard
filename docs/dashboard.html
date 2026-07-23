@@ -33,6 +33,12 @@
     <button class="btn shu" id="btn-add-habit">追加</button>
   </div>
 
+  <div class="gcal-panel" id="gcal-panel">
+    <span class="gcal-status" id="gcal-status">Googleカレンダー: 未連携</span>
+    <button class="btn secondary" id="btn-gcal-connect">Googleカレンダーと連携</button>
+    <button class="btn secondary" id="btn-gcal-sync" style="display:none;">今日の予定と同期</button>
+  </div>
+
   <div id="habit-grid" class="habit-grid" style="margin-top:18px;"></div>
   <div id="habit-empty" class="empty-state" style="display:none;">
     まだ行動が登録されていません。上のフォームから最初の一つを追加しましょう。
@@ -80,6 +86,13 @@
     <button class="btn secondary block" id="btn-save-password" style="margin-bottom:22px;">パスワードを変更</button>
 
     <hr style="border:none;border-top:1px solid var(--paper-line);margin:18px 0;">
+    <div class="field">
+      <label>Googleカレンダー連携</label>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;" id="mp-gcal-status">未連携</div>
+      <button class="btn secondary block" id="btn-gcal-disconnect">連携を解除</button>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--paper-line);margin:18px 0;">
     <button class="btn link" id="btn-delete-account" style="color:var(--shu);">退会（アカウント削除）</button>
 
     <div class="modal-actions">
@@ -104,7 +117,9 @@
 
 <div class="toast" id="toast"></div>
 
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="js/api.js"></script>
+<script src="js/calendar-sync.js"></script>
 <script src="js/dashboard.js"></script>
 </body>
 </html>

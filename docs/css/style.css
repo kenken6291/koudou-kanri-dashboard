@@ -277,6 +277,23 @@ label {
 }
 .swatch.selected { border-color: var(--ink); }
 
+.gcal-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0 4px;
+  padding: 10px 14px;
+  background: var(--paper-deep);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+}
+.gcal-panel .gcal-status {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-right: auto;
+}
+
 .habit-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
