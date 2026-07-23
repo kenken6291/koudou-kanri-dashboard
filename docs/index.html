@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行動管理ダッシュボード | ログイン</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="seal">行動</div>
+      <h1>行動管理ダッシュボード</h1>
+      <p>毎日の積み重ねを、静かに記録する。</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="login">ログイン</button>
+      <button class="tab" data-tab="register">新規登録</button>
+      <button class="tab" data-tab="forgot">パスワードを忘れた</button>
+    </div>
+
+    <div id="msg" class="msg"></div>
+
+    <!-- ログイン -->
+    <div class="panel active" id="panel-login">
+      <form id="form-login">
+        <div class="field">
+          <label>メールアドレス</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="field">
+          <label>パスワード</label>
+          <div class="pw-field">
+            <input type="password" id="login-password" required>
+            <button type="button" class="pw-toggle" data-target="login-password">表示</button>
+          </div>
+        </div>
+        <button type="submit" class="btn shu block">ログイン</button>
+      </form>
+    </div>
+
+    <!-- 新規登録 -->
+    <div class="panel" id="panel-register">
+      <form id="form-register">
+        <div class="field">
+          <label>メールアドレス</label>
+          <input type="email" id="reg-email" required>
+        </div>
+        <div class="field">
+          <label>ニックネーム（表示用）</label>
+          <input type="text" id="reg-nickname" required maxlength="20">
+        </div>
+        <div class="field">
+          <label>注意事項・免責事項</label>
+          <div class="terms-box">
+            本サービスは個人が運営する無料のツールです。データの保存・表示に万全を期していますが、
+            記録の消失・表示不具合等について運営者は一切の責任を負いません。
+            登録情報（メールアドレス・ニックネーム）は本人確認とパスワード再発行のみに使用し、
+            第三者への提供は行いません。継続的な利用を保証するものではなく、
+            予告なくサービスを変更・終了する場合があります。以上に同意の上でご利用ください。
+          </div>
+          <label class="checkline">
+            <input type="checkbox" id="reg-agree" required>
+            <span>注意事項・免責事項に同意します</span>
+          </label>
+        </div>
+        <button type="submit" class="btn shu block">登録して仮パスワードを受け取る</button>
+      </form>
+    </div>
+
+    <!-- パスワード再発行 -->
+    <div class="panel" id="panel-forgot">
+      <form id="form-forgot">
+        <div class="field">
+          <label>登録済みメールアドレス</label>
+          <input type="email" id="forgot-email" required>
+        </div>
+        <button type="submit" class="btn secondary block">仮パスワードを再発行する</button>
+        <p class="small-link-row">再発行されたパスワードはメールに記載されます。</p>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- 初回ログイン強制パスワード変更 -->
+<div class="modal-backdrop" id="modal-first-change">
+  <div class="modal">
+    <h3>初回ログインです。パスワードを変更してください</h3>
+    <form id="form-first-change">
+      <div class="field">
+        <label>新しいパスワード（8文字以上）</label>
+        <div class="pw-field">
+          <input type="password" id="fc-password" minlength="8" required>
+          <button type="button" class="pw-toggle" data-target="fc-password">表示</button>
+        </div>
+      </div>
+      <button type="submit" class="btn shu block">変更してはじめる</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
